@@ -5,6 +5,7 @@ const cors = require('cors');
 const morgan = require('morgan'); 
 
 const authRoutes = require('./routes/authRoutes');
+const gameRoutes = require('./routes/gameRoutes');
 
 const app = express();
 
@@ -15,6 +16,7 @@ app.use(express.json());
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 app.use('/api/auth', authRoutes);
+app.use('/api/game', gameRoutes);
 
 
 const PORT = process.env.PORT || 7000;
